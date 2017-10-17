@@ -1,0 +1,22 @@
+{
+  "name": "gain-angularjs",
+  "version": "1.0.0",
+  "description": "This contains various operations which are performed in Angular V1",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GodlynPaul/gain-angularjs.git"
+  },
+  "author": "Godlyn Paul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GodlynPaul/gain-angularjs/issues"
+  },
+  "homepage": "https://github.com/GodlynPaul/gain-angularjs#readme",
+  "dependencies": {
+    "angular": "^1.6.6"
+  }
+}

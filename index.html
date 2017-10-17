@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular JS</title>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+  </head>
+  <body ng-app="parentModule">
+
+    <div ng-controller="simpleController">
+      <h1 ng-bind="companyName"></h1>
+      Powered by - {{powerdBy}}
+    </div>
+    Hello World
+    <div ng-controller="nestedController1">
+        <div ng-controller="nestedController2">
+          Best Phone : {{bestPhone}}
+          <br/>
+          Best Television : {{bestTelevistion}}
+        </div>
+    </div>
+  </body>
+</html>
