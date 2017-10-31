@@ -1,0 +1,20 @@
+{
+  "name": "gain-angularjs",
+  "description": "This contains various operations which are performed in Angular V1",
+  "main": "main.js",
+  "authors": [
+    "Godlyn Paul"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/GodlynPaul/gain-angularjs",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "^2.3.5"
+  }
+}
