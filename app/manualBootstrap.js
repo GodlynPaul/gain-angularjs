@@ -5,7 +5,7 @@ The angular does the bootstrap on the predefined module with the name parentModu
 define([
   'require',
   'angular',
-  './pkRootModule',
+  './scripts/pkRootModule',
   'domReady'
 ],function (require, angular, parentModule,domReady){
   'use strict';
