@@ -3,7 +3,10 @@ define([
     'angular',
     './globalDependencyLoader'
 ], function (angular) {
-    console.log("CodeReach : ParentModule.JS");
-    var popKartApp = angular.module('popKartRootModule', ['firstChildModule']);
+    console.log("CodeReach : pkRootModule.JS");
+    var popKartApp = angular.module('popKartRootModule', [
+      'firstChildModule',
+      'electronics'
+    ]);
     return popKartApp;
 });

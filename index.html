@@ -12,6 +12,7 @@
       <h1 ng-bind="companyName"></h1>
       Powered by - {{powerdBy}}
     </div>
+
     <div ng-controller="nestedController1">
         <div ng-controller="nestedController2">
           Best Phone : {{bestPhone}}
@@ -19,6 +20,40 @@
           Best Television : {{bestTelevistion}}
         </div>
     </div>
+
+    <div ng-controller="categoryCtrl">
+      <span>CATEGORY</span>
+      <ul>
+        <li ng-repeat="categoryInd in category">
+          {{categoryInd | uppercase}}
+        </li>
+      </ul>
+    </div>
+
+    <div ng-controller="mobilesCtrl">
+      <span>Available Mobile Brands </span>
+      <input type="text" name="mobileBrands" value="" ng-model="mobileBrandSearch">
+      <ul>
+        <li ng-repeat="mobileInd in mobileBrands | filter:mobileBrandSearch | orderBy:mobileInd">
+          {{mobileInd}}
+          <div ng-show="mobileBrandSearch.toUpperCase()=='APPLE'">
+            <ul>
+              <li ng-repeat="appleInd in apple">
+                {{appleInd}}
+              </li>
+            </ul>
+          </div>
+          <div ng-show="mobileBrandSearch.toUpperCase()=='SAMSUNG'">
+            <ul>
+              <li ng-repeat="samsungInd in Samsung">
+                {{samsungInd}}
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+
   </body>
   <script src="./bower_components/requirejs/require.js" data-main="require-config"> </script>
 </html>

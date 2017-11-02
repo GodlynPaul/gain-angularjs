@@ -7,7 +7,6 @@ define([
   function($scope,$log){
     $scope.companyName = "PopKart";
     $scope.powerdBy = "G.Industry";
-    $scope.category = ["Electronics","Appliances","Men","Women","Home & Furniture","Cars & Bikes"];
     $scope.electronics = [
       {name:"Mobile", productId:"100"},
       {name:"Laptop", productId:"101"},
@@ -18,6 +17,7 @@ define([
     $log.log("LOG");
     $log.warn("WARN");
     $log.info("INFO");
+
   }]);
 
   firstChildModule.controller("nestedController1",['$scope',function($scope){
@@ -29,4 +29,7 @@ define([
     $scope.bestPhone = 'Apple';
   }]);
 
+  firstChildModule.controller("categoryCtrl",['$scope',function($scope){
+    $scope.category = ["Electronics","Appliances","Men","Women","Home & Furniture","Cars & Bikes"];
+  }]);
 })
