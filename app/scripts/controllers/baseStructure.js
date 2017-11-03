@@ -2,7 +2,7 @@
 define([
   './../firstChildModule'
 ],function(firstChildModule){
-
+    console.log("CodeReach :baseStructure");
   firstChildModule.controller("simpleController",['$scope','$log',
   function($scope,$log){
     $scope.companyName = "PopKart";

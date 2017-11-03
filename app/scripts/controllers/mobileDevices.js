@@ -1,6 +1,7 @@
 define([
   './../electronicsModule'
 ],function(electronics){
+    console.log("CodeReach :mobileDevices");
     electronics.controller("mobilesCtrl",['$scope',function($scope){
       $scope.mobileBrands = ["Apple","Samsung","Appo","MI","OnePlus","Lenovo","Honour","Micromax","ASUS","Motorola","Vivo"];
       $scope.mobileBrandSearch=""

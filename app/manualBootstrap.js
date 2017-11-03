@@ -7,6 +7,7 @@ define([
   'angular',
   './scripts/pkRootModule',
   'domReady'
+  // './scripts/router-config'
 ],function (require, angular, parentModule,domReady){
   'use strict';
   console.log("Code Reach : Bootstrap.JS ");
