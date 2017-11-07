@@ -5,13 +5,14 @@ The angular does the bootstrap on the predefined module with the name parentModu
 define([
   'require',
   'angular',
+  'angular-route',
+  'domReady',
+  './scripts/router-config',
   './scripts/pkRootModule',
-  'domReady'
-  // './scripts/router-config'
-],function (require, angular, parentModule,domReady){
+],function (require, angular, ngRoute, domReady, routerConfig, popKartRootModule){
   'use strict';
   console.log("Code Reach : Bootstrap.JS ");
   domReady(function(){
       angular.bootstrap(document,['popKartRootModule']);
-  })
+  });
 })

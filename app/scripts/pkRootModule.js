@@ -1,13 +1,13 @@
 
 define([
     'angular',
-    './globalDependencyLoader',
-    './router-config'
+    './globalDependencyLoader'
 ], function (angular) {
     console.log("CodeReach : pkRootModule.JS");
     var popKartApp = angular.module('popKartRootModule', [
       'firstChildModule',
-      'electronics'
+      'electronics',
+      'ngRoute'
     ]);
     return popKartApp;
 });
