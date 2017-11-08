@@ -6,12 +6,12 @@ define([
 		function($routeProvider,$locationProvider){
 			$routeProvider
 				.when('/mobiles',{
-					controller:'',
-					templateUrl:'./app/views/mobiles.html'
+					controller:'mobilesCtrl',
+					templateUrl:'./app/views/mobiles.html',
 				})
-				.when('/view2',{
-					controller:'',
-					templateUrl:'./app/views/view2.html'
+				.when('/complaints',{
+					controller:'complaintsCtrl',
+					templateUrl:'./app/views/complaints.html'
 				})
 				.when('/view3',{
 					controller:'',

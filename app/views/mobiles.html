@@ -1,1 +1,25 @@
-<strong>GODLYN PAUL view1</strong>
+<strong> MOBILE </strong>
+
+<div ng-controller="mobilesCtrl">
+  <span>Available Mobile Brands </span>
+  <input type="text" name="mobileBrands" value="" ng-model="mobileBrandSearch">
+  <ul>
+    <li ng-repeat="mobileInd in mobileBrands | filter:mobileBrandSearch | orderBy:mobileInd">
+      {{mobileInd}}
+      <div ng-show="mobileBrandSearch.toUpperCase()=='APPLE'">
+        <ul>
+          <li ng-repeat="appleInd in apple">
+            {{appleInd}}
+          </li>
+        </ul>
+      </div>
+      <div ng-show="mobileBrandSearch.toUpperCase()=='SAMSUNG'">
+        <ul>
+          <li ng-repeat="samsungInd in Samsung">
+            {{samsungInd}}
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>

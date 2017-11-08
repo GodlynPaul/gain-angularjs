@@ -1,0 +1,57 @@
+<strong>COMPLAINTS</strong>
+<div ng-controller="complaintsCtrl">
+	<form name="complaintsForm">
+
+		<label for="customerId">Customer ID</label>
+		<input type="text" name="customerId" value="" placeholder="" required
+			ng-model="complaintFormData.customerId"/>
+
+		<label for="customerName">Customer Name</label>
+		<input type="text" name="customerName" value="" placeholder="" required
+			ng-model="complaintFormData.customerName"/>
+
+		<!-- Normal SELECT -->
+		<label for="membershipType">Membership Type</label>
+		<select class="" name="membershipType" required
+			ng-model="complaintFormData.membershipType">
+			<option value="">SELECT</option>
+			<option value="1">Platnium</option>
+			<option value="2">Gold</option>
+			<option value="3">Silver</option>
+			<option value="4">Normal</option>
+		</select>
+
+		<!-- NG-OPTIONS SELECT	 -->
+		<label for="indiastate">State</label>
+		<select name="indiaState" required
+			ng-model="complaintFormData.indiaState"
+			ng-options="isl.value as isl.name for isl in indiaStateList">
+				<option value="">SELECT</option>
+		</select>
+
+		<!-- NG-OPTIONS SELECT Object is supplied to the ng-option-->
+		<label for="complaintCategory">Complaint Category</label>
+		<select name="complaintCategory" required
+			ng-model="complaintFormData.complaintCategory"
+			ng-options="cclValue.name for (cclKey,cclValue) in complaintCategoryList">
+				<option value="">SELECT</option>
+		</select>
+
+		<!-- NG-REPEAT SELECT -->
+		<label for="productCategory">Product Category</label>
+		<select name="productCategory" ng-model="complaintFormData.productCategory">
+			<option value="">SELECT</option>
+			<option ng-repeat="pcl in productCategoryList" value="{{pcl.value}}">
+				{{pcl.name}}
+			</option>
+		</select>
+
+		<label for="typeOfPurchase">Type of Purchase </label>
+		<input type="radio" value="Gifted" ng-model="productCategory.typeOfPurchase"/>Gifted
+		<input type="radio" value="Purchase" ng-model="productCategory.typeOfPurchase"/> Purchased
+
+		<button type="button" ng-click="complaintSubmit()">SUBMIT</button>
+		<button type="reset">RESET</button>
+		
+	</form>
+</div>
