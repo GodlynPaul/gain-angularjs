@@ -28,6 +28,17 @@ define([
 				console.log("COMPLAINT RAISED");
 				console.log($scope.complaintFormData);
 			};
+
+			$scope.availedOfferSelectALl = function(){
+				if($scope.complaintFormData.availedOffers.all){
+					$scope.complaintFormData.availedOffers.bankOffer = true;
+					$scope.complaintFormData.availedOffers.festivalOffer = true;
+					$scope.complaintFormData.availedOffers.clearenceOffer = true;
+					$scope.complaintFormData.availedOffers.promoOffer = true;
+				}else{
+					$scope.complaintFormData.availedOffers={};
+				}
+			}
 		}
 	]);
 });

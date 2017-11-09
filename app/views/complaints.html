@@ -1,57 +1,87 @@
 <strong>COMPLAINTS</strong>
 <div ng-controller="complaintsCtrl">
 	<form name="complaintsForm">
-
-		<label for="customerId">Customer ID</label>
-		<input type="text" name="customerId" value="" placeholder="" required
-			ng-model="complaintFormData.customerId"/>
-
-		<label for="customerName">Customer Name</label>
-		<input type="text" name="customerName" value="" placeholder="" required
-			ng-model="complaintFormData.customerName"/>
-
+		<div class="">
+			<label for="customerId">Customer ID</label>
+			<input type="text" name="customerId" value="" placeholder="" required
+				ng-model="complaintFormData.customerId"/>
+		</div>
+		<div class="">
+			<label for="customerName">Customer Name</label>
+			<input type="text" name="customerName" value="" placeholder="" required
+				ng-model="complaintFormData.customerName"/>
+		</div>
 		<!-- Normal SELECT -->
-		<label for="membershipType">Membership Type</label>
-		<select class="" name="membershipType" required
-			ng-model="complaintFormData.membershipType">
-			<option value="">SELECT</option>
-			<option value="1">Platnium</option>
-			<option value="2">Gold</option>
-			<option value="3">Silver</option>
-			<option value="4">Normal</option>
-		</select>
-
+		<div class="">
+			<label for="membershipType">Membership Type</label>
+			<select class="" name="membershipType" required
+				ng-model="complaintFormData.membershipType">
+				<option value="">SELECT</option>
+				<option value="1">Platnium</option>
+				<option value="2">Gold</option>
+				<option value="3">Silver</option>
+				<option value="4">Normal</option>
+			</select>
+		</div>
 		<!-- NG-OPTIONS SELECT	 -->
-		<label for="indiastate">State</label>
-		<select name="indiaState" required
-			ng-model="complaintFormData.indiaState"
-			ng-options="isl.value as isl.name for isl in indiaStateList">
-				<option value="">SELECT</option>
-		</select>
-
+		<div class="">
+			<label for="indiastate">State</label>
+			<select name="indiaState" required
+				ng-model="complaintFormData.indiaState"
+				ng-options="isl.value as isl.name for isl in indiaStateList">
+					<option value="">SELECT</option>
+			</select>
+		</div>
 		<!-- NG-OPTIONS SELECT Object is supplied to the ng-option-->
-		<label for="complaintCategory">Complaint Category</label>
-		<select name="complaintCategory" required
-			ng-model="complaintFormData.complaintCategory"
-			ng-options="cclValue.name for (cclKey,cclValue) in complaintCategoryList">
-				<option value="">SELECT</option>
-		</select>
-
+		<div class="">
+			<label for="complaintCategory">Complaint Category</label>
+			<select name="complaintCategory" required
+				ng-model="complaintFormData.complaintCategory"
+				ng-options="cclValue.name for (cclKey,cclValue) in complaintCategoryList">
+					<option value="">SELECT</option>
+			</select>
+		</div>
 		<!-- NG-REPEAT SELECT -->
-		<label for="productCategory">Product Category</label>
-		<select name="productCategory" ng-model="complaintFormData.productCategory">
-			<option value="">SELECT</option>
-			<option ng-repeat="pcl in productCategoryList" value="{{pcl.value}}">
-				{{pcl.name}}
-			</option>
-		</select>
-
-		<label for="typeOfPurchase">Type of Purchase </label>
-		<input type="radio" value="Gifted" ng-model="productCategory.typeOfPurchase"/>Gifted
-		<input type="radio" value="Purchase" ng-model="productCategory.typeOfPurchase"/> Purchased
-
-		<button type="button" ng-click="complaintSubmit()">SUBMIT</button>
-		<button type="reset">RESET</button>
-		
+		<div class="" ng-if="complaintFormData.complaintCategory.type == 'P'">
+			<label for="productCategory">Product Category</label>
+			<select name="productCategory" ng-model="complaintFormData.productCategory">
+				<option value="">SELECT</option>
+				<option ng-repeat="pcl in productCategoryList" value="{{pcl.value}}">
+					{{pcl.name}}
+				</option>
+			</select>
+		</div>
+		<div class="">
+			<label for="typeOfPurchase">Type of Purchase </label>
+			<input type="radio" value="Gifted" required
+				ng-model="complaintFormData.typeOfPurchase"/>Gifted
+			<input type="radio" value="Purchase" required
+				ng-model="complaintFormData.typeOfPurchase"/> Purchased
+		</div>
+		<div class="">
+			<label>Availed Offers</label>
+			<input type="checkbox"
+				ng-model="complaintFormData.availedOffers.all"
+				ng-change="availedOfferSelectALl()">ALL
+			<input type="checkbox"
+				ng-model="complaintFormData.availedOffers.bankOffer"
+				ng-disabled="complaintFormData.availedOffers.all">Bank
+			<input type="checkbox"
+				ng-model="complaintFormData.availedOffers.festivalOffer"
+				ng-disabled="complaintFormData.availedOffers.all">Festival
+			<input type="checkbox"
+				ng-model="complaintFormData.availedOffers.clearenceOffer"
+				ng-disabled="complaintFormData.availedOffers.all">Clearence
+			<input type="checkbox"
+				ng-model="complaintFormData.availedOffers.promoOffer"
+				ng-disabled="complaintFormData.availedOffers.all">Promo
+		</div>
+		<div class="">
+			<button type="button"
+				ng-click="complaintSubmit()"
+				ng-disabled="complaintsForm.$invalid">SUBMIT
+			</button>
+			<button type="reset">RESET</button>
+		</div>
 	</form>
 </div>
