@@ -1,15 +1,34 @@
 <strong>COMPLAINTS</strong>
 <div ng-controller="complaintsCtrl">
 	<form name="complaintsForm">
+		<span ng-show="complaintsForm.$invalid">
+				**All fields are mandatory to register a complaint
+		</span>
 		<div class="">
 			<label for="customerId">Customer ID</label>
-			<input type="text" name="customerId" value="" placeholder="" required
+			<input type="number" name="customerId" value="" placeholder="Customer ID" required
 				ng-model="complaintFormData.customerId"/>
 		</div>
 		<div class="">
 			<label for="customerName">Customer Name</label>
-			<input type="text" name="customerName" value="" placeholder="" required
+			<input type="text" name="customerName" value="" placeholder="Customer Name" required
 				ng-model="complaintFormData.customerName"/>
+		</div>
+		<div class="">
+			<label for="emailid">Email</label>
+			<input type="email" name="emailid" placeholder="email@domain" required
+				ng-model="complaintFormData.emailid">
+			<span ng-hide="complaintsForm.emailid.$valid || complaintsForm.emailid.$untouched">
+				**Invalid email ID
+			</span>
+		</div>
+		<div class="">
+			<label for="dateOfIssue">Date issue occurance</label>
+			<input type="date" name="dateOfIssue"
+				ng-model="selectedDateOfIssue" ng-change="dateGenerator()"\>
+			<span ng-show="complaintsForm.dateOfIssue.$invalid && complaintsForm.dateOfIssue.$dirty ">
+				**Invalid Date
+			</span>
 		</div>
 		<!-- Normal SELECT -->
 		<div class="">
@@ -60,19 +79,24 @@
 		</div>
 		<div class="">
 			<label>Availed Offers</label>
-			<input type="checkbox"
+			<input type="checkbox" name="availedOffers"
+				ng-required="!complaintFormData.availedOffers"
 				ng-model="complaintFormData.availedOffers.all"
 				ng-change="availedOfferSelectALl()">ALL
-			<input type="checkbox"
+			<input type="checkbox" name="availedOffers"
+				ng-required="!complaintFormData.availedOffers"
 				ng-model="complaintFormData.availedOffers.bankOffer"
 				ng-disabled="complaintFormData.availedOffers.all">Bank
-			<input type="checkbox"
+			<input type="checkbox" name="availedOffers"
+				ng-required="!complaintFormData.availedOffers"
 				ng-model="complaintFormData.availedOffers.festivalOffer"
 				ng-disabled="complaintFormData.availedOffers.all">Festival
-			<input type="checkbox"
+			<input type="checkbox" name="availedOffers"
+				ng-required="!complaintFormData.availedOffers"
 				ng-model="complaintFormData.availedOffers.clearenceOffer"
 				ng-disabled="complaintFormData.availedOffers.all">Clearence
-			<input type="checkbox"
+			<input type="checkbox" name="availedOffers"
+				ng-required="!complaintFormData.availedOffers"
 				ng-model="complaintFormData.availedOffers.promoOffer"
 				ng-disabled="complaintFormData.availedOffers.all">Promo
 		</div>
