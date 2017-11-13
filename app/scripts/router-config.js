@@ -13,11 +13,11 @@ define([
 					controller:'complaintsCtrl',
 					templateUrl:'./app/views/complaints.html'
 				})
-				.when('/view3',{
+				.when('/customers',{
 					controller:'',
-					templateUrl:'./app/views/view3.html'
+					templateUrl:'./app/views/customers.html'
 				})
- 				.otherwise({redirectTo:'/mobiles'})
+ 				.otherwise({redirectTo:'/customers'})
   		// $locationProvider.html5Mode(false);
 	  	$locationProvider.hashPrefix('');
 			$locationProvider.html5Mode({enabled: true, requireBase: true, rewriteLinks: true});

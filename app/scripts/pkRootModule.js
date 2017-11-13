@@ -7,7 +7,12 @@ define([
     var popKartApp = angular.module('popKartRootModule', [
       'baseModule',
       'electronics',
-      'ngRoute'
+      'ngRoute',
+      'ui.grid',
+      'ui.grid.edit',
+      'ui.grid.resizeColumns',
+      'ui.grid.moveColumns',
+      'ui.grid.pinning'
     ]);
     return popKartApp;
 });

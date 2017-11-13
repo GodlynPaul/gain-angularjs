@@ -22,6 +22,7 @@ define([
 				{name:"Cars & Bikes",value:6}
 			]
 			$scope.complaintFormData={};
+			$scope.complaintFormData.typeOfPurchase="Gifted";
 			$scope.complaintSubmit = function () {
 				console.log("COMPLAINT RAISED");
 				console.log($scope.complaintFormData);

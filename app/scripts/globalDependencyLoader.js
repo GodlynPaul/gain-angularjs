@@ -6,6 +6,7 @@ define([
   './controllers/baseStructure',
   './controllers/mobileDevices',
   './controllers/complaints',
+  './controllers/customers',
   './router-config'
 ],function(){
   console.log("CodeReach :globalDependencyLoader");
