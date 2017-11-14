@@ -12,7 +12,10 @@ define([
       'ui.grid.edit',
       'ui.grid.resizeColumns',
       'ui.grid.moveColumns',
-      'ui.grid.pinning'
+      'ui.grid.pinning',
+      'ui.grid.pagination',
+      'ui.grid.selection',
+      'ui.grid.exporter'
     ]);
     return popKartApp;
 });

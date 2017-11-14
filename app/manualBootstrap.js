@@ -8,9 +8,10 @@ define([
   'angular-route',
   'domReady',
   'ui-grid',
+  'pdfmake',
   './scripts/router-config',
   './scripts/pkRootModule',
-],function (require, angular, ngRoute, domReady,uiGrid, routerConfig, popKartRootModule){
+],function (require, angular, ngRoute, domReady, uiGrid, pdfmake, routerConfig, popKartRootModule){
   'use strict';
   console.log("Code Reach : Bootstrap.JS ");
   domReady(function(){

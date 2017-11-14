@@ -5,7 +5,9 @@ require.config({
     'jquery':'./node_modules/jquery/dist/jquery',
     'domReady': './node_modules/requirejs-domready/domReady',
     'angular-route':'./node_modules/angular-route/angular-route',
-    'ui-grid':"node_modules/angular-ui-grid/ui-grid"
+    'ui-grid':"node_modules/angular-ui-grid/ui-grid",
+    'pdfmake':'node_modules/pdfmake/build/vfs_fonts',
+    'pdfMakeLib':'node_modules/pdfmake/build/pdfmake'
   },
   shim: {
     'angular':{
@@ -17,6 +19,11 @@ require.config({
     },
     'ui-grid':{
       deps:['angular']
+    },
+    'pdfmake' :
+    {
+      deps: ['pdfMakeLib'],
+      exports: 'pdfMake'
     },
   },
   deps:['./app/manualBootstrap']
