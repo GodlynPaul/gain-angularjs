@@ -14,12 +14,16 @@ define([
 					templateUrl:'./app/views/complaints.html'
 				})
 				.when('/customers',{
-					controller:'',
+					controller:'customerCtrl',
 					templateUrl:'./app/views/customers.html'
 				})
- 				.otherwise({redirectTo:'/customers'})
-  		// $locationProvider.html5Mode(false);
-	  	$locationProvider.hashPrefix('');
+				.when('/employee',{
+					controller:'employeeCtrl',
+					templateUrl:'./app/views/employee.html'
+				})
+				.otherwise({redirectTo:'/employee'})
+				// $locationProvider.html5Mode(false);
+			$locationProvider.hashPrefix('');
 			$locationProvider.html5Mode({enabled: true, requireBase: true, rewriteLinks: true});
 		}]);
 	return popKartRootModule;

@@ -1,0 +1,40 @@
+<div class="" ng-controller="employeeCtrl">
+	<div class="" ng-hide="employeeAdvanceSearch">
+		<span>Global search</span>
+		<input type="text" placeholder="Search" ng-model="employeeSearch">
+	</div>
+	<span>Advanced Search</span>
+	<input type="checkbox" value="employeeAdvanceSearch"
+		ng-model="employeeAdvanceSearch"
+		ng-click="resetemployeeSearch()">
+	<table id="employeeDetails">
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Employee ID</th>
+				<th>Email</th>
+				<th>Employment Type</th>
+				<th>Gender</th>
+			</tr>
+			<tr ng-show="employeeAdvanceSearch">
+				<th><input type="text" placeholder="Search FName" ng-model="employeeSearch.fname"></th>
+				<th><input type="text" placeholder="Search LName" ng-model="employeeSearch.lname"></th>
+				<th><input type="text" placeholder="Search ID" ng-model="employeeSearch.id"></th>
+				<th><input type="text" placeholder="Search EmailID" ng-model="employeeSearch.email"></th>
+				<th><input type="text" placeholder="Employment Type"></th>
+				<th><input type="text" placeholder="Gender"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="employee in employeesDetails|filter:employeeSearch ">
+				<td>{{employee.fname}}</td>
+				<td>{{employee.lname}}</td>
+				<td>{{employee.id}}</td>
+				<td>{{employee.email}}</td>
+				<td>{{employee.emptype | employmentTypeFilter}}</td>
+				<td>{{employee.gender | genderFilter}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

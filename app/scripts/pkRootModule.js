@@ -7,6 +7,7 @@ define([
     var popKartApp = angular.module('popKartRootModule', [
       'baseModule',
       'electronics',
+      'employeeModule',
       'ngRoute',
       'ui.grid',
       'ui.grid.edit',
